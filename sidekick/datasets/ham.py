@@ -60,8 +60,11 @@ def create_ham_dataset(
     """
     Creates zip file with the HAM10000 dataset ready to be uploaded to 
     the Peltarion platform. The dataset contains labeled images of different 
-    types of skin lesions. Read more here: 
-    https://challenge2018.isic-archive.com/task3/training/
+    types of skin lesions. Read more here: https://arxiv.org/abs/1803.10417.
+    
+    All data for this task is provided under the terms of the Creative Commons 
+    Attribution-NonCommercial (CC BY-NC) 4.0 license. If you are unable to 
+    accept the terms of this license, do not download or use this data.
 
     Arguments:
     directory:  Directory where the dataset will be stored. If not provided, 
