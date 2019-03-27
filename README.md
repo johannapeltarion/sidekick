@@ -189,3 +189,6 @@ print(sidekick.encode.DTYPE_COMPATIBILITY)
 
 # Examples
 Examples of how to use sidekick are available at: [examples/](examples/)
+
+# Datasets
+Disclaimer:
