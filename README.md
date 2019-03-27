@@ -189,3 +189,14 @@ print(sidekick.encode.DTYPE_COMPATIBILITY)
 
 # Examples
 Examples of how to use sidekick are available at: [examples/](examples/)
+
+# Datasets
+Disclaimer Datasets: 
+Please note that datasets, models, research papers and other content, including 
+open source software, (collectively referred to as “Content”) provided and/or 
+suggested by Peltarion for use in the Platform and otherwise, may be subject to 
+separate third party terms of use or license terms. You are solely responsible for 
+complying with the applicable terms. Peltarion makes no representations or 
+warranties about Content and specifically disclaim all responsibility for any 
+liability, loss, or risk, which is incurred as a consequence, directly or indirectly, 
+of the use or application of any of the Content.
