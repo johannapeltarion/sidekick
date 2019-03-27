@@ -66,8 +66,7 @@ def create_ham_dataset(
     Attribution-NonCommercial (CC BY-NC) 4.0 license. If you are unable to 
     accept the terms of this license, do not download or use this data.
     
-    Disclaimer for dataset: please notice that the disclaimer in 
-    the README.md applies.
+    Please notice that the disclaimer for datasets in the README.md applies.
 
     Arguments:
     directory:  Directory where the dataset will be stored. If not provided, 
