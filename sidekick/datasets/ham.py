@@ -1,4 +1,3 @@
-import argparse
 import functools
 import os
 import sys
@@ -13,8 +12,10 @@ import sidekick
 from tqdm import tqdm
 
 
-def download_and_extract_zip(url: str, directory: str):
-    print(f'Downloading zip file from {url}')
+def download_and_extract_zip_file(url: str, directory: str) -> None:
+    if not os.path.isdir(directory):
+        sys.exit('Directory provided does not exist')
+
     response = requests.get(url, stream=True)
     response.raise_for_status()
 
@@ -50,20 +51,21 @@ def balance_dataset(df: pd.DataFrame, cat_column: str) -> pd.DataFrame:
     return df.sample(frac=1).reset_index(drop=True)
 
 
-def main(
+def create_ham_dataset(
         directory: str = None,
         size: Tuple[int, int] = (224, 224),
         split: float = 0.8,
         balance: bool = True,
         ) -> None:
-    """Creates zip file with the HAM10000 dataset ready to be uploaded to 
+    """
+    Creates zip file with the HAM10000 dataset ready to be uploaded to 
     the Peltarion platform. The dataset contains labeled images of different 
     types of skin lesions. Read more here: 
     https://challenge2018.isic-archive.com/task3/training/
 
-    Parameters:
-    directory:  directory path where the dataset will be stored. If not 
-                provided, it defaults to the current working directory.
+    Arguments:
+    directory:  Directory where the dataset will be stored. If not provided, 
+                it defaults to the current working directory.
     size:       Image size after resizing: (width, height). The original 
                 image size is (600, 450).
     split:      Split fraction between training and validation. 
@@ -87,8 +89,8 @@ def main(
     dataset_path = os.path.join(directory, 'ham_dataset.zip')
 
     with tempfile.TemporaryDirectory() as tmpdir:
-        download_and_extract_zip(metadata_zip_url, tmpdir)
-        download_and_extract_zip(images_zip_url, tmpdir)
+        download_and_extract_zip_file(metadata_zip_url, tmpdir)
+        download_and_extract_zip_file(images_zip_url, tmpdir)
 
         # read metadata
         df = pd.read_csv(os.path.join(tmpdir, metadata_dir, metadata_file))
@@ -125,38 +127,5 @@ def main(
             df,
             path_columns=['image'],
             preprocess={'image': image_processor},
-            overwrite=True,
             progress=True,
         )
-
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument(
-        '--directory',
-        type=str,
-        default=None,
-    )
-
-    parser.add_argument(
-        '--size',
-        type=Tuple[int, int],
-        default=(224, 224),
-    )
-
-    parser.add_argument(
-        '--split',
-        type=float,
-        default=0.8,
-    )
-
-    parser.add_argument(
-        '--balance',
-        type=bool,
-        default=True,
-    )
-
-    args = parser.parse_args()
-
-    main(args.directory, args.size, args.split, args.balance)
