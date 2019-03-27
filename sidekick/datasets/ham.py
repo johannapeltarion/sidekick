@@ -66,16 +66,8 @@ def create_ham_dataset(
     Attribution-NonCommercial (CC BY-NC) 4.0 license. If you are unable to 
     accept the terms of this license, do not download or use this data.
     
-    Disclaimer Dataset:
-    Please note that data sets, models, research papers and other content, 
-    including open source software, (collectively referred to as “Content”)
-    provided and/or suggested by Peltarion for use in the Platform and 
-    otherwise, may be subject to separate third party terms of use or license 
-    terms. You are solely responsible for complying with the applicable terms.
-    Peltarion makes no representations or warranties about Content and
-    specifically disclaim all responsibility for any liability, loss, or risk,
-    which is incurred as a consequence, directly or indirectly, of the use or 
-    application of any of the Content.
+    Disclaimer for dataset: please notice that the disclaimer in 
+    the README.md applies.
 
     Arguments:
     directory:  Directory where the dataset will be stored. If not provided, 
