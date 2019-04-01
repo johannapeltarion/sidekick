@@ -62,7 +62,7 @@ def create_ham_dataset(
     the Peltarion platform. The dataset contains labeled images of different 
     types of skin lesions. Read more here: https://arxiv.org/abs/1803.10417.
     
-    All data for this task is provided under the terms of the Creative Commons 
+    All data is provided under the terms of the Creative Commons
     Attribution-NonCommercial (CC BY-NC) 4.0 license. You may find the terms of 
     the licence here: https://creativecommons.org/licenses/by-nc/4.0/legalcode.
     If you are unable to accept the terms of this license, do not download or 
