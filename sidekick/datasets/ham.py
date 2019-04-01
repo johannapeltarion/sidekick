@@ -64,7 +64,7 @@ def create_ham_dataset(
     
     All data for this task is provided under the terms of the Creative Commons 
     Attribution-NonCommercial (CC BY-NC) 4.0 license. You may find the terms of 
-    the licesence here: https://creativecommons.org/licenses/by-nc/4.0/legalcode.
+    the licence here: https://creativecommons.org/licenses/by-nc/4.0/legalcode.
     If you are unable to accept the terms of this license, do not download or 
     use this data.
     
